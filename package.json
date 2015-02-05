@@ -1,7 +1,7 @@
 {
   "name": "endokken.info",
   "version": "0.1.0",
-  "description": "The Endokken documentation site",
+  "description": "The Endokken documentation site for Atom packages",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
