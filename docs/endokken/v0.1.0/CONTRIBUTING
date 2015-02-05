@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Endokken</title>
+    <link rel='stylesheet' href='bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='base.css' type='text/css'>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2 navigation'>
+          <div class='list-group'>
+  <h4 class='list-group-item-heading'>Classes</h4>
+  <a class='list-group-item' href='ClassPage'>ClassPage</a>
+<a class='list-group-item' href='Cli'>Cli</a>
+<a class='list-group-item' href='FilePage'>FilePage</a>
+<a class='list-group-item' href='Log'>Log</a>
+<a class='list-group-item' href='Resolver'>Resolver</a>
+<a class='list-group-item' href='Template'>Template</a>
+</div>
+<div class='list-group'>
+  <h4 class='list-group-item-heading'>Files</h4>
+  <a class='list-group-item' href='CHANGELOG'>CHANGELOG</a>
+<a class='list-group-item' href='CONTRIBUTING'>CONTRIBUTING</a>
+<a class='list-group-item' href='LICENSE'>LICENSE</a>
+<a class='list-group-item' href='README'>README</a>
+</div>
+        </div>
+        <div class='col-md-10'>
+          <div class='content'>
+            <h1 id="contributing">CONTRIBUTING</h1>
+<p>:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:</p>
+<p>These are just guidelines, not rules, use your best judgement and feel free to propose changes to this document in a pull request.</p>
+<h2 id="submitting-issues">Submitting Issues</h2>
+<ul>
+<li>Check the <a href="https://atom.io/docs/latest/debugging">debugging guide</a> for tips on debugging. You might be able to find the cause of the problem and fix things yourself.</li>
+<li>Include the version of Atom you are using and the OS.</li>
+<li>Include screenshots and animated GIFs whenever possible; they are immensely helpful.</li>
+<li>Include the behavior you expected.</li>
+<li>Check the dev tools (<code>alt-cmd-i</code>) for errors to include. If the dev tools are open <em>before</em> the error is triggered, a full stack trace for the error will be logged. If you can reproduce the error, use this approach to get the full stack trace and include it in the issue.</li>
+<li>Perform a cursory search to see if a similar issue has already been submitted.</li>
+<li>Please setup a <a href="https://help.github.com/articles/how-do-i-set-up-my-profile-picture">profile picture</a> to make yourself recognizable and so we can all get to know each other better.</li>
+</ul>
+<h2 id="pull-requests">Pull Requests</h2>
+<ul>
+<li>Include screenshots and animated GIFs in your pull request whenever possible.</li>
+<li>Follow the <a href="#coffeescript-styleguide">CoffeeScript</a>, <a href="https://github.com/styleguide/javascript">JavaScript</a>, and <a href="https://github.com/styleguide/css">CSS</a> styleguides.</li>
+<li>Include thoughtfully-worded, well-structured <a href="http://jasmine.github.io/">Jasmine</a> specs.</li>
+<li>Document new code based on the <a href="#documentation-styleguide">Documentation Styleguide</a></li>
+<li>End files with a newline.</li>
+<li>Place requires in the following order:<ul>
+<li>Built in Node Modules (such as <code>path</code>)</li>
+<li>Other Node Modules (such as <code>donna</code>, <code>tello</code>)</li>
+<li>Local Modules (using relative paths)</li>
+</ul>
+</li>
+<li>Place class properties in the following order:<ul>
+<li>Class methods and properties (methods starting with a <code>@</code>)</li>
+<li>Instance methods and properties</li>
+</ul>
+</li>
+<li>Avoid platform-dependent code:<ul>
+<li>Use <code>path.join()</code> to concatenate filenames.</li>
+<li>Use <code>os.tmpdir()</code> rather than <code>/tmp</code> when you need to reference the temporary directory.</li>
+</ul>
+</li>
+<li>Using a plain <code>return</code> when returning explicitly at the end of a function.<ul>
+<li>Not <code>return null</code>, <code>return undefined</code>, <code>null</code>, or <code>undefined</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="git-commit-messages">Git Commit Messages</h2>
+<ul>
+<li>Use the present tense (“Add feature” not “Added feature”)</li>
+<li>Use the imperative mood (“Move cursor to…” not “Moves cursor to…”)</li>
+<li>Limit the first line to 72 characters or less</li>
+<li>Reference issues and pull requests liberally</li>
+<li>Consider starting the commit message with an applicable emoji:<ul>
+<li>:lipstick: <code>:lipstick:</code> when improving the format/structure of the code</li>
+<li>:racehorse: <code>:racehorse:</code> when improving performance</li>
+<li>:non-potable_water: <code>:non-potable_water:</code> when plugging memory leaks</li>
+<li>:memo: <code>:memo:</code> when writing docs</li>
+<li>:penguin: <code>:penguin:</code> when fixing something on Linux</li>
+<li>:apple: <code>:apple:</code> when fixing something on Mac OS</li>
+<li>:checkered_flag: <code>:checkered_flag:</code> when fixing something on Windows</li>
+<li>:bug: <code>:bug:</code> when fixing a bug</li>
+<li>:fire: <code>:fire:</code> when removing code or files</li>
+<li>:green_heart: <code>:green_heart:</code> when fixing the CI build</li>
+<li>:white_check_mark: <code>:white_check_mark:</code> when adding tests</li>
+<li>:lock: <code>:lock:</code> when dealing with security</li>
+<li>:arrow_up: <code>:arrow_up:</code> when upgrading dependencies</li>
+<li>:arrow_down: <code>:arrow_down:</code> when downgrading dependencies</li>
+</ul>
+</li>
+</ul>
+<h2 id="coffeescript-styleguide">CoffeeScript Styleguide</h2>
+<ul>
+<li>Use parentheses if it improves code clarity.</li>
+<li>Prefer alphabetic keywords to symbolic keywords:<ul>
+<li><code>a is b</code> instead of <code>a == b</code></li>
+</ul>
+</li>
+<li>Avoid spaces inside the curly-braces of hash literals:<ul>
+<li><code>{a: 1, b: 2}</code> instead of <code>{ a: 1, b: 2 }</code></li>
+</ul>
+</li>
+<li>Include a single line of whitespace between methods.</li>
+</ul>
+<h2 id="documentation-styleguide">Documentation Styleguide</h2>
+<ul>
+<li>Use <a href="https://github.com/atom/atomdoc">AtomDoc</a>.</li>
+<li>Use <a href="https://daringfireball.net/projects/markdown">Markdown</a>.</li>
+<li>Reference methods and classes in markdown with the custom <code>{}</code> notation:<ul>
+<li>Reference classes with <code>{ClassName}</code></li>
+<li>Reference instance methods with <code>{ClassName::methodName}</code></li>
+<li>Reference class methods with <code>{ClassName.methodName}</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="example">Example</h3>
+<pre><code class="lang-coffee"><span class="hljs-comment"># Public: Disable the package with the given name.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># * `name`    The {String} name of the package to disable.</span>
+<span class="hljs-comment"># * `options` (optional) The {Object} with disable options (default: {}):</span>
+<span class="hljs-comment">#     * `trackTime`     A {Boolean}, `true` to track the amount of time taken.</span>
+<span class="hljs-comment">#     * `ignoreErrors`  A {Boolean}, `true` to catch and ignore errors thrown.</span>
+<span class="hljs-comment"># * `callback` The {Function} to call after the package has been disabled.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Returns `undefined`.</span>
+<span class="hljs-attribute">disablePackage</span>: <span class="hljs-function"><span class="hljs-params">(name, options, callback)</span> -&gt;</span>
+</code></pre>
+          </div>
+          <div class='footer text-center'>
+            <small>
+              Generated on Wed Feb 04 2015 21:34:47 GMT-0800 (PST) by
+              <a href='https://github.com/lee-dohm/endokken'>endokken v0.1.0</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='bootstrap.min.js'></script>
+    <script src='base.js'></script>
+  </body>
+</html>

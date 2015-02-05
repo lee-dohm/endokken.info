@@ -2,11 +2,12 @@
   "name": "endokken.info",
   "version": "0.1.0",
   "description": "The Endokken documentation site for Atom packages",
-  "main": "index.js",
+  "main": "index.coffee",
   "scripts": {
-    "start": "node index.js"
+    "start": "coffee index.coffee"
   },
   "dependencies": {
+    "coffee-script": "~1.9.x",
     "express": "~4.9.x"
   },
   "engines": {

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Endokken</title>
+    <link rel='stylesheet' href='bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='base.css' type='text/css'>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2 navigation'>
+          <div class='list-group'>
+  <h4 class='list-group-item-heading'>Classes</h4>
+  <a class='list-group-item' href='ClassPage'>ClassPage</a>
+<a class='list-group-item' href='Cli'>Cli</a>
+<a class='list-group-item' href='FilePage'>FilePage</a>
+<a class='list-group-item' href='Log'>Log</a>
+<a class='list-group-item' href='Resolver'>Resolver</a>
+<a class='list-group-item' href='Template'>Template</a>
+</div>
+<div class='list-group'>
+  <h4 class='list-group-item-heading'>Files</h4>
+  <a class='list-group-item' href='CHANGELOG'>CHANGELOG</a>
+<a class='list-group-item' href='CONTRIBUTING'>CONTRIBUTING</a>
+<a class='list-group-item' href='LICENSE'>LICENSE</a>
+<a class='list-group-item' href='README'>README</a>
+</div>
+        </div>
+        <div class='col-md-10'>
+          <div class='content'>
+            <h1>Class: Cli</h1>
+<div class='row'>
+  <div class='col-md-6'>
+    <table class='info-table table table-bordered'>
+      <tbody>
+        <tr>
+          <th>Class Name</th>
+          <td>Cli</td>
+        </tr>
+        <tr>
+          <th>Superclass</th>
+          <td><a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a></td>
+        </tr>
+        <tr>
+          <th>File</th>
+          <td>
+            <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/cli.coffee#L20'>src&#47;cli.coffee</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<h2>Description</h2>
+<p>Used to provide the command-line interface for the tool.</p>
+<h2>Examples</h2>
+<pre><code class="lang-coffee">cli = <span class="hljs-keyword">new</span> Cli
+cli.run()
+</code></pre>
+<h2></h2>
+<div class='section'>
+  
+  
+  
+  
+  <div class='method-block panel panel-primary' id='instance-constructor'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::constructor()</span>
+      <a href='#instance-constructor' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/cli.coffee#L22' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Parses the command-line arguments. </p>
+    
+    
+    
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-run'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::run()</span>
+      <a href='#instance-run' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/cli.coffee#L29' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Executes the program. </p>
+    
+    
+    
+  </div>
+</div>
+</div>
+<h2>Helpers</h2>
+<div class='section'>
+  
+  
+  
+  
+  <div class='method-block panel panel-primary' id='instance-docsDirectory'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::docsDirectory(subpath<sup>?</sup>)</span>
+      <a href='#instance-docsDirectory' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/cli.coffee#L52' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Gets the path to the directory where documentation should be stored.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    subpath
+    <span class='label label-info'>Optional</span>
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> to join to the docs directory.
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing the absolute path to the documentation directory with optional
+  subpath.
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-sourceDirectory'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::sourceDirectory(subpath<sup>?</sup>)</span>
+      <a href='#instance-sourceDirectory' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/cli.coffee#L65' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Gets the path to the root Endokken code directory.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    subpath
+    <span class='label label-info'>Optional</span>
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> to join to the source directory.
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing the absolute path to the root Endokken code directory with
+  optional subpath.
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+</div>
+          </div>
+          <div class='footer text-center'>
+            <small>
+              Generated on Wed Feb 04 2015 21:34:47 GMT-0800 (PST) by
+              <a href='https://github.com/lee-dohm/endokken'>endokken v0.1.0</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='bootstrap.min.js'></script>
+    <script src='base.js'></script>
+  </body>
+</html>

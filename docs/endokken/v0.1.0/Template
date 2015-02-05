@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Endokken</title>
+    <link rel='stylesheet' href='bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='base.css' type='text/css'>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2 navigation'>
+          <div class='list-group'>
+  <h4 class='list-group-item-heading'>Classes</h4>
+  <a class='list-group-item' href='ClassPage'>ClassPage</a>
+<a class='list-group-item' href='Cli'>Cli</a>
+<a class='list-group-item' href='FilePage'>FilePage</a>
+<a class='list-group-item' href='Log'>Log</a>
+<a class='list-group-item' href='Resolver'>Resolver</a>
+<a class='list-group-item' href='Template'>Template</a>
+</div>
+<div class='list-group'>
+  <h4 class='list-group-item-heading'>Files</h4>
+  <a class='list-group-item' href='CHANGELOG'>CHANGELOG</a>
+<a class='list-group-item' href='CONTRIBUTING'>CONTRIBUTING</a>
+<a class='list-group-item' href='LICENSE'>LICENSE</a>
+<a class='list-group-item' href='README'>README</a>
+</div>
+        </div>
+        <div class='col-md-10'>
+          <div class='content'>
+            <h1>Class: Template</h1>
+<div class='row'>
+  <div class='col-md-6'>
+    <table class='info-table table table-bordered'>
+      <tbody>
+        <tr>
+          <th>Class Name</th>
+          <td>Template</td>
+        </tr>
+        <tr>
+          <th>Superclass</th>
+          <td><a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a></td>
+        </tr>
+        <tr>
+          <th>File</th>
+          <td>
+            <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/template.coffee#L30'>src&#47;template.coffee</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<h2>Description</h2>
+<p>Used to render a HAML template into an HTML document.</p>
+<p>It uses <a href="https://www.npmjs.com/package/haml-coffee">haml-coffee</a> to render the HAML template into
+HTML. See the documentation for haml-coffee for full details on the dialect in use.</p>
+<h2>Examples</h2>
+Basic usage:
+<pre><code class="lang-coffee">Template.render(<span class="hljs-string">'some-template'</span>, <span class="hljs-attribute">foo</span>: <span class="hljs-string">'bar'</span>)
+</code></pre>
+Templates can also be used to render portions of pages and then the results passed in:
+<pre><code class="lang-coffee">section = Template.render(<span class="hljs-string">'page-section'</span>, <span class="hljs-attribute">content</span>: <span class="hljs-string">'Some content to include'</span>)
+fullPage = Template.render(<span class="hljs-string">'full-page'</span>, <span class="hljs-attribute">section</span>: section)
+</code></pre>
+<h2></h2>
+<div class='section'>
+  
+  
+  
+  <div class='method-block panel panel-primary' id='static-render'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>.render(template, locals, options)</span>
+      <a href='#static-render' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/template.coffee#L53' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Renders the <code>template</code> using <code>locals</code>.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    template
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> name of the template to use.
+    
+  </td>
+</tr>
+<tr>
+  <th>
+    locals
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a> containing the locals to use in the template.
+    
+  </td>
+</tr>
+<tr>
+  <th>
+    options
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>
+    <ul>
+  <li>
+  <code>compiler</code>
+  &mdash;
+  <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a> of <code>hamlc</code> compiler options
+</li>
+<li>
+  <code>markdown</code>
+  &mdash;
+  Converts the listed fields from Markdown to HTML
+</li>
+<li>
+  <code>noParagraph</code>
+  &mdash;
+  Strips the paragraph tags from fields converted from Markdown
+</li>
+<li>
+  <code>resolve</code>
+  &mdash;
+  Resolves references in the listed fields in <code>locals</code>
+</li>
+</ul>
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing the rendered tepmlate.
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+  <div class='method-block panel panel-primary' id='instance-constructor'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::constructor(template)</span>
+      <a href='#instance-constructor' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/template.coffee#L59' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Creates a new <code>Template</code> object.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    template
+  </th>
+  <td>
+    Name <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> of the template to use to render the object. 
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-render'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::render(template, locals, options)</span>
+      <a href='#instance-render' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/template.coffee#L72' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Renders the <code>template</code> using <code>locals</code>.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    template
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> name of the template to use.
+    
+  </td>
+</tr>
+<tr>
+  <th>
+    locals
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a> containing the locals to use in the template.
+    
+  </td>
+</tr>
+<tr>
+  <th>
+    options
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>
+    <ul>
+  <li>
+  <code>compiler</code>
+  &mdash;
+  <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a> of <code>hamlc</code> compiler options
+</li>
+<li>
+  <code>markdown</code>
+  &mdash;
+  Converts the listed fields from Markdown to HTML
+</li>
+<li>
+  <code>noParagraph</code>
+  &mdash;
+  Strips the paragraph tags from fields converted from Markdown
+</li>
+<li>
+  <code>resolve</code>
+  &mdash;
+  Resolves references in the listed fields in <code>locals</code>
+</li>
+</ul>
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing the rendered tepmlate.
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-markdownify'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::markdownify(content, options)</span>
+      <a href='#instance-markdownify' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/template.coffee#L94' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Converts the supplied Markdown content into HTML.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    content
+  </th>
+  <td>
+    Markdown content <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a>.
+    
+  </td>
+</tr>
+<tr>
+  <th>
+    options
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>
+    <ul>
+  <li>
+  <code>noParagraph</code>
+  &mdash;
+  If <code>true</code> it will strip any HTML paragraph tags.
+</li>
+</ul>
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing the generated HTML.
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-resolveReferences'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::resolveReferences(text)</span>
+      <a href='#instance-resolveReferences' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/template.coffee#L107' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Resolves references to other documentation.</p>
+<p>Uses <a class='reference' href='Resolver'>Resolver</a> to convert any documentation references found.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    text
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> to search for references.
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> with all documentation references turned into links.
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+</div>
+          </div>
+          <div class='footer text-center'>
+            <small>
+              Generated on Wed Feb 04 2015 21:34:47 GMT-0800 (PST) by
+              <a href='https://github.com/lee-dohm/endokken'>endokken v0.1.0</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='bootstrap.min.js'></script>
+    <script src='base.js'></script>
+  </body>
+</html>

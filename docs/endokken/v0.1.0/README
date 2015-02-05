@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Endokken</title>
+    <link rel='stylesheet' href='bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='base.css' type='text/css'>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2 navigation'>
+          <div class='list-group'>
+  <h4 class='list-group-item-heading'>Classes</h4>
+  <a class='list-group-item' href='ClassPage'>ClassPage</a>
+<a class='list-group-item' href='Cli'>Cli</a>
+<a class='list-group-item' href='FilePage'>FilePage</a>
+<a class='list-group-item' href='Log'>Log</a>
+<a class='list-group-item' href='Resolver'>Resolver</a>
+<a class='list-group-item' href='Template'>Template</a>
+</div>
+<div class='list-group'>
+  <h4 class='list-group-item-heading'>Files</h4>
+  <a class='list-group-item' href='CHANGELOG'>CHANGELOG</a>
+<a class='list-group-item' href='CONTRIBUTING'>CONTRIBUTING</a>
+<a class='list-group-item' href='LICENSE'>LICENSE</a>
+<a class='list-group-item' href='README'>README</a>
+</div>
+        </div>
+        <div class='col-md-10'>
+          <div class='content'>
+            <h1 id="endokken">Endokken</h1>
+<p>Generates HTML documentation for your Atom package from <a href="https://github.com/atom/atomdoc">AtomDoc</a> comments in your code and your GitHub project’s own Markdown files.</p>
+<h2 id="command-line-interface">Command-Line Interface</h2>
+<p>You can simply run the <code>endokken</code> command from the root directory of your Atom package and it will generate HTML documentation in the <code>./docs</code> directory.</p>
+<pre><code class="lang-sh">$ endokken
+</code></pre>
+<p>Endokken also supports the following command-line options:</p>
+<ul>
+<li><code>--metadata [FILENAME]</code> Dumps the AtomDoc metadata to the file name you provide or <code>api.json</code> if no filename is given.</li>
+<li><code>--help</code> Displays command-line help</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Endokken was originally envisioned by me as <a href="http://yardoc.org">YARD</a> for Atom packages. As such, Endokken owes a lot of its inspiration and ideas to YARD and its author <a href="https://github.com/lsegal">Loren Segal</a>.</p>
+<h2 id="copyright">Copyright</h2>
+<p>Copyright &copy; 2014-2015 by <a href="http://www.lee-dohm.com">Lee Dohm</a> and <a href="http://www.liftedstudios.com">Lifted Studios</a>. See <a href="https://github.com/lee-dohm/endokken/blob/master/LICENSE.md">LICENSE</a> for details.</p>
+          </div>
+          <div class='footer text-center'>
+            <small>
+              Generated on Wed Feb 04 2015 21:34:47 GMT-0800 (PST) by
+              <a href='https://github.com/lee-dohm/endokken'>endokken v0.1.0</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='bootstrap.min.js'></script>
+    <script src='base.js'></script>
+  </body>
+</html>

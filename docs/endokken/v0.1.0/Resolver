@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Endokken</title>
+    <link rel='stylesheet' href='bootstrap.min.css' type='text/css'>
+    <link rel='stylesheet' href='base.css' type='text/css'>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2 navigation'>
+          <div class='list-group'>
+  <h4 class='list-group-item-heading'>Classes</h4>
+  <a class='list-group-item' href='ClassPage'>ClassPage</a>
+<a class='list-group-item' href='Cli'>Cli</a>
+<a class='list-group-item' href='FilePage'>FilePage</a>
+<a class='list-group-item' href='Log'>Log</a>
+<a class='list-group-item' href='Resolver'>Resolver</a>
+<a class='list-group-item' href='Template'>Template</a>
+</div>
+<div class='list-group'>
+  <h4 class='list-group-item-heading'>Files</h4>
+  <a class='list-group-item' href='CHANGELOG'>CHANGELOG</a>
+<a class='list-group-item' href='CONTRIBUTING'>CONTRIBUTING</a>
+<a class='list-group-item' href='LICENSE'>LICENSE</a>
+<a class='list-group-item' href='README'>README</a>
+</div>
+        </div>
+        <div class='col-md-10'>
+          <div class='content'>
+            <h1>Class: Resolver</h1>
+<div class='row'>
+  <div class='col-md-6'>
+    <table class='info-table table table-bordered'>
+      <tbody>
+        <tr>
+          <th>Class Name</th>
+          <td>Resolver</td>
+        </tr>
+        <tr>
+          <th>Superclass</th>
+          <td><a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a></td>
+        </tr>
+        <tr>
+          <th>File</th>
+          <td>
+            <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/resolver.coffee#L26'>src&#47;resolver.coffee</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<h2>Description</h2>
+<p>Used to resolve references in documentation into links to further documentation.</p>
+<p>It supports the following reference types:</p>
+<ul>
+<li>Class - <code>{ClassName}</code></li>
+<li>Static method/property - <code>{ClassName.methodName}</code></li>
+<li>Instance method/property - <code>{ClassName::methodName}</code></li>
+<li>Local static item - <code>{.methodName}</code></li>
+<li>Local instance item - <code>{::methodName}</code></li>
+</ul>
+<p>These references can be either project-local or external to the project. Most external references
+will be to <a href="https://developer.mozilla.org">the Mozilla Developer Network</a>.</p>
+<ul>
+<li>Project-local references<ul>
+<li>Class - links to <code>ClassName</code></li>
+<li>Static method - links to <code>ClassName#static-methodName</code></li>
+<li>Instance method - links to <code>ClassName#instance-methodName</code></li>
+<li>Local static item - links to <code>#static-methodName</code></li>
+<li>Local instance item - links to <code>#instance-methodName</code></li>
+</ul>
+</li>
+<li>External references<ul>
+<li>Class - links to <code>baseUrl/ClassName</code></li>
+<li>Static method - links to <code>baseUrl/ClassName/methodName</code></li>
+<li>Instance method - links to <code>baseUrl/ClassName/methodName</code> </li>
+</ul>
+</li>
+</ul>
+<h2></h2>
+<div class='section'>
+  
+  
+  
+  
+  <div class='method-block panel panel-primary' id='instance-constructor'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::constructor(metadata)</span>
+      <a href='#instance-constructor' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/resolver.coffee#L40' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Initializes the resolver using the project <code>metadata</code>.</p>
+<p>It also initializes the basic MDN references.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    metadata
+  </th>
+  <td>
+    Documentation metadata from the project. 
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-add'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::add(name, url)</span>
+      <a href='#instance-add' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/resolver.coffee#L48' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Adds an external reference.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    name
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> to match.
+    
+  </td>
+</tr>
+<tr>
+  <th>
+    url
+  </th>
+  <td>
+    URL <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> to resolve to. 
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    
+  </div>
+</div>
+<div class='method-block panel panel-primary' id='instance-resolve'>
+  <div class='panel-heading'>
+    <div class='panel-title'>
+      <span class='signature'>::resolve(text)</span>
+      <a href='#instance-resolve' data-toggle='tooltip' title='Permalink'>
+        <span class='octicon octicon-link'></span>
+      </a>
+      <a href='https://github.com/lee-dohm/endokken/blob/v0.1.0/src/resolver.coffee#L59' data-toggle='tooltip' title='Source Code'>
+        <span class='octicon octicon-file-code'></span>
+      </a>
+    </div>
+  </div>
+  <div class='panel-body'>
+    <p>Resolves a documentation reference to a link name and url.</p>
+    
+    <table class='parameter table table-condensed table-hover'>
+  <col style='width:25%'>
+  <col style='width:75%'>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <th>
+    text
+  </th>
+  <td>
+    <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing a documentation reference.
+    
+  </td>
+</tr>
+  </tbody>
+</table>
+    <table class='return-value table table-condensed table-hover'>
+  <thead>
+    <tr>
+      <th>Return Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td>Returns a <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a> containing the original text if no match is found.
+</td>
+</tr>
+<tr>
+  <td>Returns an <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a> if a match is found that contains the following fields:
+<ul>
+<li><code>name</code> Link text <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a>.</li>
+<li><code>url</code> Link URL <a class='reference' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'>String</a>.</li>
+</ul>
+</td>
+</tr>
+  </tbody>
+</table>
+  </div>
+</div>
+</div>
+          </div>
+          <div class='footer text-center'>
+            <small>
+              Generated on Wed Feb 04 2015 21:34:47 GMT-0800 (PST) by
+              <a href='https://github.com/lee-dohm/endokken'>endokken v0.1.0</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='bootstrap.min.js'></script>
+    <script src='base.js'></script>
+  </body>
+</html>
