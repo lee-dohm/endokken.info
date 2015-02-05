@@ -6,11 +6,14 @@ app = express()
 app.set('port', (process.env.PORT or 5000))
 
 app.use(express.static("#{__dirname}/public"))
+
+# Treat extensionless files under `/docs` as HTML
 app.get /\/docs\/.*\/[^.]+$/, (request, response) ->
   response.set('Content-Type', 'text/html')
   path = request.url.slice(1)
   response.send(new Buffer(fs.readFileSync(path)))
 
+# Serve everything else under `/docs` as a static resource
 app.use('/docs', express.static("#{__dirname}/docs"))
 
 app.get '/', (request, response) ->
