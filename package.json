@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
+  "name": "endokken.info",
+  "version": "0.1.0",
+  "description": "The Endokken documentation site",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/lee-dohm/endokken.info"
   },
   "keywords": [
-    "node",
-    "heroku",
-    "express"
+    "endokken",
+    "atom",
+    "documentation"
   ],
   "license": "MIT"
 }
