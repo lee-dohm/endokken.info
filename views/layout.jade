@@ -7,10 +7,21 @@ html
 
     title= title
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/base.css')
+
   body
-    .container
-      .row
-        block content
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/') Endokken
+
+    block content
+
+    .container-fluid
+      .row.col-md-8.col-md-offset-2
+        footer
+          :markdown
+            Copyright &copy; #{utilities.copyrightRange()} by [Lee Dohm](http://www.lee-dohm.com).
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
