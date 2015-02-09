@@ -15,7 +15,7 @@ app = express()
 app.engine('hamlc', consolidate['haml-coffee'])
 
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'hamlc')
+app.set('view engine', 'jade')
 
 # uncomment after placing your favicon in /public
 # app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -39,7 +39,7 @@ app.use (req, res, next) ->
 showStackTrace = app.get('env') is 'development'
 app.use (err, req, res, next) ->
   res.status(err.status || 500)
-  res.render 'error.jade',
+  res.render 'error',
     message: err.message
     error: if showStackTrace then err else {}
 
