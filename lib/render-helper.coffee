@@ -4,5 +4,5 @@ utilities = require './utilities'
 
 module.exports =
   standardRender: (res, template, opts) ->
-    options = _.extend(opts, utilities: utilities)
+    options = _.extend(opts, helpers: utilities)
     res.render(template, options)
