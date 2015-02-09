@@ -5,7 +5,7 @@
 #
 
 app = require '../app'
-debug = (require 'debug')('endokken.info:server')
+debug = (require 'debug')('server')
 http = require 'http'
 
 normalizePort = (val) ->
