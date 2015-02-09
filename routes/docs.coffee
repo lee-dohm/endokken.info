@@ -1,12 +1,16 @@
 express = require 'express'
 fs = require 'fs'
+path = require 'path'
 
 router = express.Router()
 
-router.get /\/.*\/[^.]+$/, (request, response) ->
+router.get /\/$/, (request, response) ->
+  response.redirect('README')
+
+router.get /\/[^.]+$/, (request, response) ->
   response.set('Content-Type', 'text/html')
-  path = "docs#{request.url}"
-  response.send(new Buffer(fs.readFileSync(path)))
+  url = fs.realpathSync(path.join('docs', request.url))
+  response.sendFile(url)
 
 router.use express.static("#{__dirname}/../docs")
 
