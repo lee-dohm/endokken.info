@@ -1,9 +1,9 @@
 express = require 'express'
-utilities = require '../lib/utilities'
+{standardRender} = require '../lib/render-helper'
 
 router = express.Router()
 
 router.get '/', (req, res, next) ->
-  res.render('index', title: 'endokken.info', utilities: utilities)
+  standardRender(res, 'index', title: 'endokken.info')
 
 module.exports = router

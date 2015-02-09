@@ -9,6 +9,8 @@ path = require 'path'
 routes = require './routes/index'
 docs = require './routes/docs'
 
+{standardRender} = require './lib/render-helper'
+
 app = express()
 
 # View engine setup
@@ -36,11 +38,15 @@ app.use (req, res, next) ->
 
 # error handler
 
-showStackTrace = app.get('env') is 'development'
+showStackTrace = undefined
+showStackTrace = true if app.get('env') is 'development'
+
 app.use (err, req, res, next) ->
   res.status(err.status || 500)
-  res.render 'error',
+  err.stack = null unless showStackTrace
+
+  standardRender res, 'error',
     message: err.message
-    error: if showStackTrace then err else {}
+    error: err
 
 module.exports = app
