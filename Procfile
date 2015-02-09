@@ -1,1 +1,1 @@
-web: coffee index.coffee
+web: coffee ./bin/www
