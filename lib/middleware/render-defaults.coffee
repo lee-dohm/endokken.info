@@ -20,10 +20,10 @@ _ = require 'underscore'
 # Returns a middleware {Function} suitable for `app.use`.
 defaults = (defaultLocals) ->
   (req, res, next) ->
-    oldRender = res.render
+    res.oldRender = res.render
     res.render = (layout, locals, callback) ->
       locals = _.extend(defaultLocals, locals)
-      oldRender(layout, locals, callback)
+      res.oldRender(layout, locals, callback)
 
     next()
 
