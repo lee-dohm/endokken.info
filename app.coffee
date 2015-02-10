@@ -6,10 +6,10 @@ favicon = require 'serve-favicon'
 logger = require 'morgan'
 path = require 'path'
 
+defaults = require './lib/middleware/render-defaults'
+
 routes = require './routes/index'
 docs = require './routes/docs'
-
-{standardRender} = require './lib/render-helper'
 
 app = express()
 
@@ -26,6 +26,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded(extended: false))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+
+renderDefaults = defaults
+  copyrightRange: '2015'
+  title: 'Endokken &middot; Documentation for Atom Packages'
+app.use(renderDefaults)
 
 app.use('/', routes)
 app.use('/docs', docs)
@@ -44,9 +49,6 @@ showStackTrace = true if app.get('env') is 'development'
 app.use (err, req, res, next) ->
   res.status(err.status || 500)
   err.stack = null unless showStackTrace
-
-  standardRender res, 'error',
-    message: err.message
-    error: err
+  res.render('error', message: err.message, error: err)
 
 module.exports = app
