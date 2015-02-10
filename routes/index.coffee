@@ -4,6 +4,6 @@ express = require 'express'
 router = express.Router()
 
 router.get '/', (req, res, next) ->
-  standardRender(res, 'index', title: 'endokken.info')
+  standardRender(res, 'index', title: 'Endokken &middot; Documentation for Atom Packages')
 
 module.exports = router
