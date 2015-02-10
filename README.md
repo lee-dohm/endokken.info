@@ -22,6 +22,10 @@ This process is going to be deprecated soon in preparation for moving to Digital
     $ brew install docker
     $ brew install boot2docker
     ```
+1. Start boot2docker
+    ```bash
+    $ boot2docker up
+    ```
 1. Build the Docker image
     ```bash
     $ docker build -t endokken.info .
@@ -34,7 +38,7 @@ This process is going to be deprecated soon in preparation for moving to Digital
     ```bash
     $ boot2docker ip
     ```
-1. View the home page by navigating to `http://$(ip):4000`
+1. View the home page by navigating to `http://$(ip):4000` or `http://dockerhost:4000` if an entry for `dockerhost` has been added to your `/etc/hosts` file.
 
 ### Helpful Atom Packages
 
