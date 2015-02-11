@@ -32,15 +32,15 @@ router.get /^\/[^/]+\/latest/, (req, res, next) ->
     err.status = 404
     next(err)
 
-router.get /\/$/, (request, response) ->
-  debug("received #{request.url}, redirecting to README")
-  response.redirect('README')
+router.get /\/$/, (req, res) ->
+  debug("received #{req.url}, redirecting to README")
+  res.redirect('README')
 
-router.get /\/[^.]+$/, (request, response) ->
-  debug("received #{request.url}, rendering as HTML")
-  response.set('Content-Type', 'text/html')
-  url = fs.realpathSync(path.join('docs', request.url))
-  response.sendFile(url)
+router.get /\/[^.]+$/, (req, res) ->
+  debug("received #{req.url}, rendering as HTML")
+  res.set('Content-Type', 'text/html')
+  url = fs.realpathSync(path.join('docs', req.url))
+  res.sendFile(url)
 
 router.use express.static('docs')
 
