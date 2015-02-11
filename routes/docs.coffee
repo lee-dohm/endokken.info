@@ -13,6 +13,8 @@ splitLatestUrl = (url) ->
 
 router = express.Router()
 
+# Match URLs of the form: /package/latest/somethingsomething
+# Redirects to the latest version of the package
 router.get /^\/[^/]+\/latest/, (req, res, next) ->
   debug("received #{req.url}, checking for latest version")
   req.url = "#{req.url}/" if req.url.match(/latest$/)
@@ -32,10 +34,12 @@ router.get /^\/[^/]+\/latest/, (req, res, next) ->
     err.status = 404
     next(err)
 
+# Match URLs that end in a slash and redirect them to the README at the same path
 router.get /\/$/, (req, res) ->
   debug("received #{req.url}, redirecting to README")
   res.redirect('README')
 
+# Match file URLs with no extension and return them as HTML.
 router.get /\/[^.]+$/, (req, res) ->
   debug("received #{req.url}, rendering as HTML")
   res.set('Content-Type', 'text/html')
