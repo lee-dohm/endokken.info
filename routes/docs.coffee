@@ -8,8 +8,10 @@ latestVersion = (packagePath) ->
   versions = fs.readdirSync(packagePath)
   versions.sort(semver.rcompare)[0]
 
+# Splits a
 splitLatestUrl = (url) ->
-  url.match(/^\/([^/]+)\/latest\/(.*)$/)
+  match = url.match(/^\/([^/]+)\/latest\/(.*)$/)
+  match?[1..-1]
 
 router = express.Router()
 
@@ -21,7 +23,7 @@ router.get /^\/[^/]+\/latest/, (req, res, next) ->
 
   match = splitLatestUrl(req.url)
   if match?
-    [..., packageName, rest] = match
+    [packageName, rest] = match
     debug("received #{req.url}, finding latest version of #{packageName}")
 
     packagePath = path.join('docs', packageName)
@@ -40,11 +42,17 @@ router.get /\/$/, (req, res) ->
   res.redirect('README')
 
 # Match file URLs with no extension and return them as HTML.
-router.get /\/[^.]+$/, (req, res) ->
+router.get /\/[^.]+$/, (req, res, next) ->
   debug("received #{req.url}, rendering as HTML")
   res.set('Content-Type', 'text/html')
-  url = fs.realpathSync(path.join('docs', req.url))
-  res.sendFile(url)
+  filePath = path.join(path.dirname(__dirname), 'docs', req.url)
+
+  if fs.existsSync(filePath)
+    res.sendFile(filePath)
+  else
+    err = new Error('Not found')
+    err.status = 404
+    next(err)
 
 router.use express.static('docs')
 
